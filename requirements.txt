@@ -1,0 +1,11 @@
+# Packages the notebook imports or installs. Versions were not recorded when it was run;
+# pin them (pip freeze) after a successful run to make it fully reproducible.
+matplotlib
+numpy
+pandas
+plotly
+scikit-learn
+seaborn
+tensorflow
+xgboost
+imbalanced-learn
