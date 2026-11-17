@@ -1,6 +1,6 @@
 # Bankruptcy Prediction: When 97% Accuracy Means Missing Most Bankruptcies
 
-**Predicting company bankruptcy from 95 financial ratios, where only 3.2% of companies go bankrupt. Six models, imbalanced vs. SMOTE-balanced training, and a threshold optimizer that broke in an instructive way.**
+**Predicting company bankruptcy from 95 financial ratios, where only 3.2% of companies go bankrupt. Five models compared (the notebook also trains a decision tree and k-nearest neighbours), imbalanced vs. SMOTE-balanced training, and a threshold optimizer that broke in an instructive way.**
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dojedaro/bankruptcy-prediction-imbalanced-classification/blob/main/bankruptcy_prediction.ipynb)
 [![Notebook checks](https://github.com/dojedaro/bankruptcy-prediction-imbalanced-classification/actions/workflows/notebooks.yml/badge.svg)](https://github.com/dojedaro/bankruptcy-prediction-imbalanced-classification/actions/workflows/notebooks.yml)
@@ -50,7 +50,7 @@ flowchart LR
     D[95 financial ratios<br/>6,819 companies] --> E[EDA: class balance,<br/>correlations, outliers]
     E --> C[Drop features with<br/>correlation > 0.85]
     C --> S[Stratified 80/20 split,<br/>scaling]
-    S --> I[Train 5 models<br/>on imbalanced data]
+    S --> I[Train the models<br/>on imbalanced data]
     S --> B[SMOTE on training set only<br/>then train]
     I & B --> M[Recall, precision, F1,<br/>ROC AUC on the same test set]
     M --> T[Type 2 error analysis<br/>+ threshold search]
@@ -81,7 +81,7 @@ Matplotlib, seaborn.
   oversampling without synthetic data.
 - Report precision at a fixed recall (for example 80%), the number a credit team would set.
 
-*Extracted on 2026-11-13 from a catch-all coursework repository into its own project.*
+*Moved into its own repository on 2026-11-13 from an older multi-project repository.*
 
 ## License
 
